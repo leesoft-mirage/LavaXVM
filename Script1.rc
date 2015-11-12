@@ -1,0 +1,230 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "打开LavaX...",                ID_OPEN
+        MENUITEM "关闭LavaX",                   ID_CLOSE, GRAYED
+        MENUITEM "复位\tF8",                    ID_RESET, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        ID_EXIT
+    END
+    POPUP "设置"
+    BEGIN
+        MENUITEM "隔行扫描",                    ID_TVSCAN
+        MENUITEM "黑白",                        ID_GRAY
+        MENUITEM SEPARATOR
+        MENUITEM "结束时认证",                  ID_ENDVERIFY
+        POPUP "安全检测"
+        BEGIN
+            MENUITEM "不检测",                      ID_RAM0
+            MENUITEM "宽松检测",                    ID_RAM1, CHECKED
+            MENUITEM "严格检测",                    ID_RAM2
+        END
+    END
+    POPUP "工具"
+    BEGIN
+        MENUITEM "动态认证",                    ID_VERIFY
+        MENUITEM "静态认证",                    ID_CHECK
+        MENUITEM SEPARATOR
+        MENUITEM "屏幕截图\tF9",                ID_BMP
+        MENUITEM SEPARATOR
+        MENUITEM "启用金手指",                  ID_CHTUSE, CHECKED
+        MENUITEM "编辑金手指...",               ID_CHTEDIT
+        MENUITEM "搜索金手指...",               ID_FINDCHEAT
+        MENUITEM SEPARATOR
+        MENUITEM "注册PAC服务",                 ID_REGPAC
+        MENUITEM "撤消PAC服务",                 ID_UNREGPAC
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于LavaX Virtual Machine",   ID_ABOUT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_F8,          ID_RESET,               VIRTKEY, NOINVERT
+    VK_F9,          ID_BMP,                 VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 187, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于LavaX Virtual Machine"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,141,7,39,14
+    LTEXT           "LavaX Virtual Machine",IDC_STATIC,44,7,86,12
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,6,57,
+                    173,1
+    ICON            IDI_ICON1,IDC_STATIC,13,16,20,20
+    LTEXT           "版本：3.5.3.060625",IDC_STATIC,44,23,86,10
+    LTEXT           "版权所有 (C)  2003-2015  LeeSoft",IDC_STATIC,44,41,132,
+                    11
+    EDITTEXT        IDC_EDIT1,7,64,172,32,ES_MULTILINE | ES_READONLY | 
+                    ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_FINDCHEAT DIALOG DISCARDABLE  0, 0, 159, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "搜索金手指"
+FONT 10, "宋体"
+BEGIN
+    RADIOBUTTON     "相等",IDC_EQU,15,15,28,13
+    RADIOBUTTON     "增加",IDC_ABOVE,15,30,28,13
+    RADIOBUTTON     "减少",IDC_BELOW,15,46,28,13
+    RADIOBUTTON     "数值",IDC_DATA,15,63,28,13
+    GROUPBOX        "搜索方式",IDC_STATIC,7,7,49,73
+    RADIOBUTTON     "8位",IDC_8bits,17,95,28,13
+    RADIOBUTTON     "16位",IDC_16bits,17,111,28,13
+    GROUPBOX        "数据类型",IDC_STATIC,7,87,49,43
+    LISTBOX         IDC_LB,74,7,76,123,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT,7,141,38,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "预备",IDC_PREFIND,58,141,23,14
+    PUSHBUTTON      "搜索",IDC_FIND,88,141,23,14
+    PUSHBUTTON      "计算器",IDC_CALC,119,141,31,14
+END
+
+IDD_CHTEDIT DIALOG DISCARDABLE  0, 0, 178, 118
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "编辑金手指"
+FONT 10, "宋体"
+BEGIN
+    LISTBOX         IDC_LB,7,7,75,104,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_TEXT,99,7,72,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "增加",IDC_ADD,99,29,72,13
+    PUSHBUTTON      "删除",IDC_DEL,99,52,72,13
+    PUSHBUTTON      "修改",IDC_EDIT,99,75,72,13
+    PUSHBUTTON      "确认",IDC_SAVE,99,98,72,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "VERIFY.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_FINDCHEAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_CHTEDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BIN
+//
+
+IDR_BIN1                BIN     DISCARDABLE     "LVM.bin"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

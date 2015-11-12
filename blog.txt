@@ -1,0 +1,58 @@
+.LOG
+3.1
+增加256色模式
+用CreadteFile，ReadFile，WriteFile实现fopen,fread,fwrite
+
+3.0.0
+增加C_CIPTR,C_CLPTR，修改对int,char型引用赋值的错误
+
+2.0.1.1112
+修改GetBlock函数，使其与说明书一致（x与width忽略bit0-2，无论在哪种GraphMode）。
+
+修改put_dot函数，Zero虚拟机认为屏幕的所有地方都是点阵，毕竟带ICON的LCD是一种特例。
+
+运行时最严格的内存安全检测认为，除了少数可以带字符串参数的函数中允许读（仍然不允许写）string队列外，其他可以读写的内存只有$2000-$6fff。
+
+
+1.0.0.050405
+put_string时压栈string的地址时取消置byte2为0x10的做法。
+
+System.GetPID返回0，使得所有需要PID的AP都无法在pc端虚拟机运行，以保护版权。
+
+3.0.0.050428
+取消对_GRAPH和_GBUF的支持，彻底杜绝直接操作显存
+新的BmpData结构，支持1,4,8位色模式
+
+3.0.0.050502
+Circle和Ellipse也支持在缓冲区绘图
+
+
+8:47 2005-5-9
+改变R8G8B4(256色)的调色板为R5G9B5(225色)
+R5G9B5影射到0x10-0xf0。0仍然为最黑，0xff仍然为最白，其余1-0xf,0xf1-0xfe可自定义
+0:26 2005-5-14
+WriteBlock增加透明写功能(type 6)，只用于256色模式
+21:07 2005-5-19
+GetBlock在256色模式下x与宽度都不必是8的倍数
+8:41 2005-5-22
+修改icon
+调试时支持8MB的数据的watch
+加快hline的速度，使得画block,横线等速度大大提高。
+
+20:57 2005-6-5
+增加System.GetTickCount
+9:03 2005-6-26
+增加消息机制和System.PeekMessage
+10:25 2005-7-1
+修改WriteBlock在GraphMode==4时的错误
+23:14 2005-9-10
+通过每执行一定数目的虚拟机指令休眠1毫秒，大大降低CPU占用率
+13:24 2006-1-2
+修改程序icon的16x16图象
+8:44 2006-5-12
+把push_aint当作处理push_offset，把push_lalong当作push_loffset处理。实际证明是可行的。
+虚拟机从3.3版起，_TEXT也不支持了。
+3.3版程序考虑了在ARM运行的内存对齐问题
+
+7:10 2006-6-17
+修正qrshift的问题，>>应该做逻辑右移而非算术右移
